@@ -43,8 +43,12 @@
             }
         }
         public HashSet<Cell> Links { get => _links; }
-        public bool Linked(Cell cell)
+        public bool Linked(Cell? cell)
         {
+            if (cell==null)
+            {
+                return false;
+            }
             return _links.Contains(cell);
         }
         public HashSet<Cell> Neighbours()
