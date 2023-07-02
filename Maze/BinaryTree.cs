@@ -1,12 +1,13 @@
-﻿using System;
+﻿using MazeCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MazeCore
+namespace Maze
 {
-    public class BinaryTree
+    public class BinaryTree:IStrategy
     {
         public void On(Grid grid)
         {
@@ -18,8 +19,7 @@ namespace MazeCore
                 if (cell.East != null) neighbours.Add(cell.East);
                 if (neighbours.Count > 0)
                 {
-                    var index = grid.Rnd.Next(neighbours.Count);
-                    var neighbour = neighbours[index];
+                    var neighbour = grid.Sample(neighbours);
                     cell.Link(neighbour);
                 }
             }

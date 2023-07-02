@@ -134,5 +134,10 @@ namespace MazeCore
 
             return ret.ToString();
         }
+        public Cell Sample(IEnumerable<Cell> cells)
+        {
+            var r = Rnd.Next(cells.Count());
+            return cells.ElementAt(r);
+        }
     }
 }

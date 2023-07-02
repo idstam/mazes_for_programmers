@@ -25,8 +25,10 @@
         public Cell? East { get => _east; set => _east = value; }
         public Cell? West { get => _west; set => _west = value; }
 
-        public void Link(Cell cell, bool bidi = true)
+        public void Link(Cell? cell, bool bidi = true)
         {
+            if (cell == null) return;
+
             _links.Add(cell);
             if (bidi)
             {
