@@ -396,3 +396,6 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+agk/agk.exe
+agk/mazes-for-programmers.exe
+agk/media/bytecode.byc
