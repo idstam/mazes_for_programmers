@@ -17,17 +17,31 @@ SetOrientationAllowed( 1, 1, 1, 1 ) // allow both portrait and landscape on mobi
 SetSyncRate( 30, 0 ) // 30fps instead of 60 to save battery
 SetScissor( 0,0,0,0 ) // use the maximum available screen space, no black borders
 UseNewDefaultFonts( 1 )
+SetRandomSeed(1337)
 
-#insert "grid_types.agc"
-#insert "grid_cell.agc"
-#insert "grid.agc"
-#insert "grid_render.agc"
+#insert "mz_grid_types.agc"
+#insert "mz_grid_cell.agc"
+#insert "mz_grid.agc"
+#insert "mz_grid_render.agc"
+#insert "mz_strategies.agc"
 
-grid as Grid
-grid = CreateGrid(10, 10)
+grid as MzGrid
+size = 3
+grid = MzCreateGrid(size, size)
+//MzBinaryTreeStrategy(grid)
+MzSidewinderStrategy(grid)
+
+//		grid = MzCreateGrid(size, size)
+//		MzSidewinderStrategy(grid)
+//		grid = MzCreateGrid(size, size)
+//		MzSidewinderStrategy(grid)
 
 do
-    RenderGrid(grid)
+	if GetPointerPressed() = true
+		grid = MzCreateGrid(size, size)
+		MzSidewinderStrategy(grid)
+	endif
+    MzRenderGridOutlines(grid)
     Print( ScreenFPS() )
     Sync()
 loop

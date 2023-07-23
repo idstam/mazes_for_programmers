@@ -49,17 +49,27 @@ dynamic_memory=0
 output_path=
 
 [projectfiles]
-FILE_0=grid.agc;-1
-FILE_1=grid_cell.agc;-1
-FILE_2=grid_render.agc;-1
-FILE_3=grid_types.agc;-1
-FILE_4=main.agc;-1
+FILE_0=main.agc;-1
+FILE_1=mz_grid.agc;-1
+FILE_2=mz_grid_cell.agc;-1
+FILE_3=mz_grid_render.agc;-1
+FILE_4=mz_grid_types.agc;-1
+FILE_5=mz_strategies.agc;-1
 
 [files]
-FILE_NAME_0=0;grid.agc;9;0
-FILE_NAME_1=0;grid_cell.agc;0;1
-FILE_NAME_2=0;grid_render.agc;13;2
-FILE_NAME_3=1;main.agc;26;3
+FILE_NAME_0=0;main.agc;28;0
+FILE_NAME_1=1;mz_grid.agc;17;1
+FILE_NAME_2=0;mz_grid_cell.agc;19;2
+FILE_NAME_3=0;mz_grid_render.agc;7;3
+FILE_NAME_4=0;mz_grid_types.agc;7;4
+FILE_NAME_5=0;mz_strategies.agc;6;5
 
 [watchvariables]
+watch_variable=@Version;
+watch_variable=grid.Cells[i].East;
+watch_variable=grid.Cells[i].North;
+watch_variable=i;
+watch_variable=neighbours;
 
+[project]
+description=
