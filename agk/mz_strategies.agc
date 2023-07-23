@@ -23,8 +23,8 @@ function MzSidewinderStrategy(grid ref as MzGrid)
 	for row = 0 to grid.Rows -1
 		run.length = -1
 		for col = 0 to grid.Cols -1
-			cellID = (row * grid.Cols) + col
-			run.insert(cellID)
+			i = (row * grid.Cols) + col
+			run.insert(i)
 			at_eastern_boundary = (col = grid.Cols -1)
 			at_northern_boundary = (row = 0)
 			should_close_out = at_eastern_boundary or ((at_northern_boundary = false) and (Random(0,1) = 1))
@@ -36,7 +36,7 @@ function MzSidewinderStrategy(grid ref as MzGrid)
 					run.length = -1
 				endif
 			else
-				MzLinkCells(grid, cellID, grid.Cells[cellID].East, true)
+				MzLinkCells(grid, i, grid.Cells[i].East, true)
 			endif
 		next
 	next

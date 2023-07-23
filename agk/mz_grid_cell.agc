@@ -39,10 +39,11 @@ endfunction
 
 function MzLinked(cell1 as MzCell, cell2 as MzCell)
 	if cell2.Initialized = false then exitfunction false
+	for i = 0 to cell1.Links.length
+		if cell1.Links[i] = cell2.ID then exitfunction true
+	next
 	
-	ret = cell1.Links.find(cell2.ID) >= 0
-	
-endfunction ret
+endfunction false
 
 function MzGetCellNeighbours(grid as MzGrid,cell as MzCell)
 	neighbours as integer[]

@@ -26,10 +26,10 @@ SetRandomSeed(1337)
 #insert "mz_strategies.agc"
 
 grid as MzGrid
-size = 3
+size = 10
 grid = MzCreateGrid(size, size)
-//MzBinaryTreeStrategy(grid)
-MzSidewinderStrategy(grid)
+MzBinaryTreeStrategy(grid)
+//MzSidewinderStrategy(grid)
 
 //		grid = MzCreateGrid(size, size)
 //		MzSidewinderStrategy(grid)
@@ -39,7 +39,12 @@ MzSidewinderStrategy(grid)
 do
 	if GetPointerPressed() = true
 		grid = MzCreateGrid(size, size)
-		MzSidewinderStrategy(grid)
+		s = Random(0,1)
+		if s = 0
+			MzBinaryTreeStrategy(grid)
+		elseif s = 1
+			MzSidewinderStrategy(grid)
+		endif
 	endif
     MzRenderGridOutlines(grid)
     Print( ScreenFPS() )
